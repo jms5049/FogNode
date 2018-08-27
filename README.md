@@ -15,4 +15,5 @@
 
 ### Fog Node 란?
 
-- 다량의 Sensor 데이터가 직접 Server로 전송된다면 트래픽 폭증, 과부하 문제가 발생함 
+- 다량의 Sensor 데이터가 직접 Server로 전송된다면 트래픽 폭증, 과부하 문제가 발생함
+- 위의 문제점을 해결하기 위해 IoT Sensor와 Server 사이에 Fog Node를 두어 모든 데이터들을 저장, 관리하도록 함
