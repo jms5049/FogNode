@@ -24,3 +24,22 @@ class database():
         # config.CONFIG['dbname']
         timestamp = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.localtime())
         print(timestamp)
+        json_body = [
+            {
+                "measurement": "smartfarm",
+                "tags": {
+                    "host": "hostname"  # config.CONFIG['hostname']
+                },
+                #"time": timestamp,
+                "fields": {
+                }
+            }
+        ]
+
+        json_body[0]['fields'] = jsons
+
+        client = InfluxDBClient(self.host, self.port, user, password, dbname)
+
+        dblist = client.get_list_database()
+
+        
