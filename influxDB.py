@@ -44,3 +44,9 @@ class database():
 
         # list of DB already created
         self.is_exist = self.search_dictionaries('name', dbname, dblist)
+
+        # minimize the number of create_db func called
+        if self.is_exist:
+          print('database already exists')
+        else:
+          client.create_database(dbname)
