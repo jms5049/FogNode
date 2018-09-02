@@ -42,4 +42,5 @@ class database():
 
         dblist = client.get_list_database()
 
-        
+        # list of DB already created
+        self.is_exist = self.search_dictionaries('name', dbname, dblist)
