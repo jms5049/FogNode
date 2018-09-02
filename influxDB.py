@@ -50,3 +50,7 @@ class database():
           print('database already exists')
         else:
           client.create_database(dbname)
+
+        # print("Write points: {0}".format(json_body))
+        client.write_points(json_body)
+
