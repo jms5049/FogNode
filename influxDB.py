@@ -54,3 +54,9 @@ class database():
         # print("Write points: {0}".format(json_body))
         client.write_points(json_body)
 
+    def search_dictionaries(self, key, value, list_of_dictionaries):
+        result = [element for element in list_of_dictionaries if element[key] == value]
+        if not result:
+            return False
+        else:
+            return True
