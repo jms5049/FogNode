@@ -43,6 +43,9 @@ def dict_to_json(dict, func) :
         out_str += ": " 
         out_str += func(dict[key])
         out_str += ", " 
+    if len(out_str) > 2:
+        out_str = out_str[:-2]
+        out_str += "}"
 
     return out_str
 
