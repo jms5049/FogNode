@@ -25,3 +25,16 @@ def data_to_json(data) :
         print("type?€ {}".format(type(data)))
         return '""'
 
+def list_to_json(list, func):
+    out_str = "[" 
+    for val in list:
+        out_str += func(val)
+        out_str += ", " 
+
+    if len(out_str) > 2:
+        out_str = out_str[:-2]
+        out_str += "]" 
+    return out_str
+
+
+
