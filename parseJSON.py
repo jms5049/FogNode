@@ -36,5 +36,18 @@ def list_to_json(list, func):
         out_str += "]" 
     return out_str
 
+def dict_to_json(dict, func) :
+    out_str = "{" 
+    for key in dict.keys() :
+        out_str += ('"' + key.__str__() + '"') 
+        out_str += ": " 
+        out_str += func(dict[key])
+        out_str += ", " 
 
+    return out_str
+
+if __name__ == "__main__":
+    print("test")
+else:
+    print("run func")
 
