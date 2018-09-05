@@ -3,6 +3,12 @@
 import socket
 from rule import *
 
+def set_rule(data):
+    temp = data[0]
+    humid = data[1]
+    gas = data[2]
+    rule(temp,humid,gas)
+
 if __name__ == "__main__":
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
