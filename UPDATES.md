@@ -7,3 +7,8 @@
 
 - DDS 통신
 - 개발중
+
+## Server <-> User
+
+- 웹
+- AWS 사용
