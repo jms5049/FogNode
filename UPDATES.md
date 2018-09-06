@@ -1,10 +1,4 @@
-## Arduino
+## Arduino <-> Fog Node
 
-
-## Fog Node
-
-
-## Server
-
-
-## User Interface
+- MQTT Ελ½Ε
+- Opensource (Mosquitto)
