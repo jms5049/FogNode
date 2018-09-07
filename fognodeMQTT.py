@@ -12,6 +12,9 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     print "Topic: ", msg.topic + '\nMessage: ' + str(msg.payload)
 
+    
+
+
 if __name__ == "__main__":
 
     #mqtt
@@ -19,6 +22,8 @@ if __name__ == "__main__":
     client.on_connect = on_connect
     client.on_message = on_message
     client.connect("iot.eclipse.org", 1883, 60)
+    #db setup
+    db = database("localhost",8086)
 
     #mqtt    
     client.loop_forever()
