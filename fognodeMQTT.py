@@ -12,7 +12,16 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     print "Topic: ", msg.topic + '\nMessage: ' + str(msg.payload)
 
-    
+    try:
+        temp = msg.payload
+        temp = temp.split(':')
+        data = {temp[0] : strTofloat(temp[1])}
+        db.insert(data)
+        remote_control(temp[0],strTofloat(temp[1]))
+    except:
+        print('error')
+
+
 
 
 if __name__ == "__main__":
