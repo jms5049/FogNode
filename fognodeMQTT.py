@@ -22,6 +22,10 @@ def on_message(client, userdata, msg):
         print('error')
 
 
+def strTofloat(msg):
+    return float(msg)
+
+
 
 
 if __name__ == "__main__":
