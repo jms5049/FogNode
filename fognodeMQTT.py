@@ -26,6 +26,15 @@ def strTofloat(msg):
     return float(msg)
 
 
+def remote_control(key, value):
+
+    dict_rule = rule.__dict__
+
+    if key in dict_rule:
+        retention = dict_rule[key]
+
+        if value > retention:
+            client.publish("f2a",key)
 
 
 if __name__ == "__main__":
