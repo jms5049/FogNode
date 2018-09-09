@@ -14,6 +14,9 @@
 
 - Opensource (InfluxDB for Database)
 
+## Server [Cloud]
+
+- Opensource (Grafana for Visualization)
 
 ## Server [Cloud] <-> User
 
