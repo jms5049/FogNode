@@ -10,6 +10,11 @@
 - DDS 통신
 - 개발중
 
+## Fog Node [Cloud]
+
+- Opensource (InfluxDB for Database)
+
+
 ## Server [Cloud] <-> User
 
 - 웹
