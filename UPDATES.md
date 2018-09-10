@@ -14,6 +14,8 @@
 
 ## Fog Node [Cloud]
 
+- Arduino로부터 센서 값 가져오기
+- Database 생성 및 저장하기
 - Opensource (InfluxDB for Database)
 
 ## Fog Node [Cloud] <-> Server [Cloud]
