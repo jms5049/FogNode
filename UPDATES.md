@@ -25,6 +25,9 @@
 
 ## Server [Cloud]
 
+- 사용자 UI 구축
+- 사용자로부터 값 읽어오기
+- 사용자 모바일에 알람주기
 - Opensource (Grafana for Visualization)
 
 ## Server [Cloud] <-> User
