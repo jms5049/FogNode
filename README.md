@@ -21,6 +21,8 @@
 
 ### 기본 구조
 
+![default](https://user-images.githubusercontent.com/26538414/46549724-ee9fad80-c90d-11e8-9d62-0d1b2215ef5e.JPG)
+
 - 그림 참조
 
 ### 시나리오
