@@ -15,13 +15,15 @@
 
 ### Fog Node 란?
 
+![default](https://user-images.githubusercontent.com/26538414/46549724-ee9fad80-c90d-11e8-9d62-0d1b2215ef5e.JPG)
+
 - 다량의 Sensor 데이터가 직접 Server로 전송된다면 트래픽 폭증, 과부하 문제가 발생함
 - 위의 문제점을 해결하기 위해 IoT Sensor와 Server 사이에 Fog Node를 두어 모든 데이터들을 저장, 관리하도록 함
 - 서버보다 신속하게 IoT 장치 자동 원격 제어가 가능함
 
 ### 기본 구조
 
-![default](https://user-images.githubusercontent.com/26538414/46549724-ee9fad80-c90d-11e8-9d62-0d1b2215ef5e.JPG)
+![default](https://user-images.githubusercontent.com/26538414/46549844-4b9b6380-c90e-11e8-81f4-f4e71788697c.JPG)
 
 - 그림 참조
 
