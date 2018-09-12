@@ -1,4 +1,4 @@
-#Updates
+# Updates
 
 #### Fog Node , Server는 AWS를 사용한 Cloud 환경
 
@@ -10,7 +10,7 @@
 ## Arduino <-> Fog Node [Cloud]
 
 - MQTT 통신
-- Opensource (Mosquitto)
+- Opensource (Mosquitto for MQTT)
 
 ## Fog Node [Cloud]
 
