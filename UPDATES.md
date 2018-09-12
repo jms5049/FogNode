@@ -16,6 +16,8 @@
 
 - Arduino로부터 센서 값 가져오기
 - Database 생성 및 저장하기
+- 서버로부터 사용자 값 읽어오기
+- 사용자 설정 범위 이외의 값 탐지시 서버로 알람 전송
 - Opensource (InfluxDB for Database)
 
 ## Fog Node [Cloud] <-> Server [Cloud]
