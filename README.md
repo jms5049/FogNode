@@ -37,6 +37,8 @@
 
 2. 비정상 데이터 알림
 
+![2](https://user-images.githubusercontent.com/26538414/46549848-4d652700-c90e-11e8-90ef-bd0d82e35be4.JPG)
+
 - 정상 범위 초과 시 Fog Node가 사용자에게 긴급 알림 발생
 
 3. 데이터 제공 및 시각화
