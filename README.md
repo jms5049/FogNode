@@ -31,6 +31,8 @@
 
 1. 지능적 자동제어
 
+![1](https://user-images.githubusercontent.com/26538414/46549847-4c33fa00-c90e-11e8-884f-696492d5f58f.JPG)
+
 - 온도 변화 시 Fog Node가 능동적으로 냉난방장치 가동
 
 2. 비정상 데이터 알림
