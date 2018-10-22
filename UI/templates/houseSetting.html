@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="utf-8" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>하우스 설정</title>
+  </head>
+  <body>
+    <form action = "http://smartfarm.gq:5000/houseResult" method = "POST">
+
+      <p id='fruitTitle'>작물 선택</p>
+
+      <label for="strawberry">딸기</label>
+      <input type="radio" name="fruitCategori" value="strawberry" id="strawberry">
+
+      <label for="watermelon">수박</label>
+      <input type="radio" name="fruitCategori" value="watermelon" id="watermelon">
+
+      <label for="others">사용자 설정</label>
+      <input type="radio" name="fruitCategori" value="others" id="others">
+
+        <p>온도 <input type = "text" name = "temperature"/>℃</p>
+        <p>습도 <input type = "text" name = "humidity"/>%</p>
+
+      <p><input type = "submit" value = "submit" /></p>
+     </form>
+
+     <script src="/../static/js/setting.js"></script>
+
+  </body>
+</html>

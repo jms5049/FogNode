@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="utf-8" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>하우스 설정 결과</title>
+  </head>
+  <body>
+    <p> result
+    <table border = 1>
+       {% for key, value in houseResult.items() %}
+
+          <tr>
+             <th> {{ key }} </th>
+             <td> {{ value }} </td>
+          </tr>
+
+       {% endfor %}
+    </table>
+  </p>
+
+  <p> setting
+    <table border = 1>
+       {% for key, value in houseSettingValue.items() %}
+
+          <tr>
+             <th> {{ key }} </th>
+             <td> {{ value }} </td>
+          </tr>
+
+       {% endfor %}
+    </table>
+  </P>
+  <a href="http://smartfarm.gq:5000"><button>홈으로</button></a>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="utf-8" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>하우스 이상 알림 설정</title>
+  </head>
+  <body>
+    <form action = "http://smartfarm.gq:5000/alarmResult" method = "POST">
+      <p>
+        최소 온도 <input type = "text" name = "minTemperature"/>℃
+         ~
+         최대 온도 <input type = "text" name = "maxTemperature"/>℃
+      </p>
+      <p>
+        최소 습도 <input type = "text" name = "minHumidity"/>%
+         ~
+         최대 습도 <input type = "text" name = "maxHumidity"/>%
+      </p>
+      <p><input type = "submit" value = "submit" /></p>
+     </form>
+
+     <script src="/../static/js/setting.js"></script>
+
+  </body>
+</html>
