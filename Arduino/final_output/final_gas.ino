@@ -29,6 +29,7 @@ int value = 0;
 String message_gas;
 #define USE_SERIAL Serial
 int swit=1;
+//최초 실행시 셋팅
 void setup(){
 /////////////가스감지센서/////////////////////////////
     pinMode(led_red_1, OUTPUT);
@@ -69,11 +70,14 @@ void loop() {
     if (!client.connected()) { //wifi 연결을 지속적으로 확인
         reconnect();
     }
+    //가스 감지 센서
     gas_func();
     convert_json(); 
     ++value; 
+    //가스 감지에 대한 메시지 발행.
     client.publish(mqtt_topic,msg_gas);
     swit = client.subscribe(sub_topic);
+    
     //이상치 감지시 fognode에서 보낸 topic 수신 및 사이렌 알림
     if(swit){ 
       Serial.print("Publish message: \n");
