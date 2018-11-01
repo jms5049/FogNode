@@ -37,6 +37,7 @@ int value = 0;
 String message;
 #define USE_SERIAL Serial
 
+//초기실행 시 설정
 void setup(){
     pinMode(piezo, OUTPUT);
 ///////////////////////장애물 감지센서///////////////////
@@ -79,7 +80,7 @@ void loop() {
     if (!client.connected()) {
         reconnect();
     }
-
+    //감지센서 함수
     infrared_func();
     convert_json();
     
@@ -89,6 +90,7 @@ void loop() {
     swit = client.subscribe(sub_topic);
     Serial.print("swithch number: ");
     Serial.println(swit);
+    //움직임이 감지되었을 경우
     if(swit){
         Serial.print("Publish message: \n");
         Serial.println(msg);   
@@ -107,7 +109,7 @@ void loop() {
     delay(500);
 }
 
-
+//구독한 메시지 수신
 void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("Message arrived [");
     Serial.print(topic);
@@ -124,7 +126,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
    
 }
 
-
+//wifi 재연결
 void reconnect() {
     // Loop until we're reconnected
     while (!client.connected()) {
@@ -143,7 +145,7 @@ void reconnect() {
 }
 
 
-
+//움직임 감지 센서 함수
 void infrared_func(){
   infrared_state = digitalRead(infrared_pin);
   if(infrared_state){
@@ -154,7 +156,7 @@ void infrared_func(){
   }
 }
 
-
+//json으로 값 변환
 void convert_json() {
 
   message = "infrared_state:";
@@ -166,6 +168,7 @@ void convert_json() {
   //mqtt.publish("home/thirdroom/temp_humi", message, true); // retained message
   // ......
 } 
+//움직임 감지 시 led점등
 void led_siren(){
     digitalWrite(led_red_1, HIGH);
     digitalWrite(led_red_2, HIGH);
@@ -179,7 +182,7 @@ void led_siren(){
     digitalWrite(led_blue_1, LOW);
     digitalWrite(led_blue_2, LOW);
 }
-
+//움직임 감지 시 사운드 
 void playTone(long duration, int freq) {
   duration *= 1000;
   int period = (1.0 / freq) * 1000000;
