@@ -79,29 +79,28 @@ void loop() {
     if (!client.connected()) {
         reconnect();
     }
-    
+    //온습도 감지
     dht_func();
     delay(100);
     convert_json();
     ++value;
-
+    //메시지 발행.
     client.publish(mqtt_topic, msg_tmp);
     delay(200);
+    //메시지 구독.
     client.publish(mqtt_topic, msg_hum);
     swit = client.subscribe(sub_topic);
     
-    //print ( msgText);
+    //publish한 메시지 출력.
     if(swit){
       Serial.println("\n<<<publish message>>>");
       Serial.print(msg_tmp);
       Serial.print(msg_hum);
       if(check_tmp.equals("temperature")){ 
         digitalWrite(led_red_2, HIGH);
-
       }
     }
     else{
-        //led_siren();
       Serial.print("fail subscribe");
     }
     Serial.print("\n=====================");
@@ -109,7 +108,7 @@ void loop() {
     delay(1000);
 }
 
-
+//온습도 센서
 void dht_func(){
   hum = dht.readHumidity();
   tmp = dht.readTemperature();
@@ -118,7 +117,7 @@ void dht_func(){
   } 
 }
 
-
+//값 json 변환
 void convert_json() {
   message_tmp = "temperature:";
   message_tmp += tmp;
@@ -130,6 +129,7 @@ void convert_json() {
   message_hum.toCharArray(msg_hum,message_hum.length()+1);
 } 
 
+//메시지 구독
 void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("Message arrived [");
     Serial.print(topic);
@@ -144,7 +144,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     check_tmp = msgText;
     Serial.println(msgText);
 }
-
+//wifi 재연결
 void reconnect() {
     // Loop until we're reconnected
     while (!client.connected()) {
