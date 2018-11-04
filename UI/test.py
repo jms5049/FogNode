@@ -4,22 +4,24 @@ import json
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
-ipaddr = '192.168.26.128'
+#소켓통신할 IP
+ipaddr = '192.168.26.128' 
 
+#index페이지
 @app.route('/')
-def index():
+def index():   
    return render_template('index.html')
 
 '''''''''
 house setting
 '''''''''
-
+#하우스 세팅 값
 houseSettingValue = dict()
-
+#하우스 세팅 페이지
 @app.route('/houseSetting')localhost
 def houseSettingRender():
    return render_template('houseSetting.html')
-
+#하우스 세팅 결과
 @app.route('/houseResult',methods = ['POST', 'GET'])
 def houserResult():
    if request.method == 'POST':
@@ -37,7 +39,7 @@ def houserResult():
       toJSON(houseSettingValue)
 
       return render_template("houseResult.html",houseResult = houseResult, houseSettingValue = houseSettingValue)
-
+#웹의 결과를 python dictionary로 전달
 def houseSetting(result):
    fruitCategori = result['fruitCategori']
 
@@ -46,7 +48,7 @@ def houseSetting(result):
       houseSettingValue = result
    else:
      defaultHouseSetting(fruitCategori)
-
+#기본 과일에 대한 세팅값
 def defaultHouseSetting(fruitCategori):
 
    global houseSettingValue
@@ -57,7 +59,7 @@ def defaultHouseSetting(fruitCategori):
 
 
 '''''''''
-alarmSetting
+alarmSetting 하우스 세팅과 동일한 동작
 '''''''''
 
 alarmSettingValue = dict()
@@ -91,7 +93,7 @@ def alarmSetting(result):
 '''''''''
 JSON
 '''''''''
-
+#JSON으로 형식을 통일하기 위한 전처리, 소켓통신
 def toJSON(setting):
    JSONSetting = json.dumps(setting)
    print('json',JSONSetting)
